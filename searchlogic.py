@@ -2,10 +2,15 @@ import os
 def show(dir):
     list_of_dirs=os.listdir(dir)
     print(list_of_dirs)
-
-def navegation(command,cwd):
+    return list_of_dirs
+def navegation(command,dir):
     if command == "..":
-        new_cwd= "/".join(cwd.split("/")[:-1]) or "/"
-        os.chdir(new_cwd)
-        print(f"Now at{new_cwd}")
-        return new_cwd
+        new_dir= "/".join(dir.split("/")[:-1]) or "/"
+        os.chdir(new_dir)
+        print(f"Now at{new_dir}")
+        return new_dir
+    if command == "cd":
+        path=input("WHERE TO?: ")
+        os.chdir(path)
+        print(f"Now at{path}")
+        return path

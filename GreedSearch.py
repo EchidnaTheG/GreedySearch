@@ -6,9 +6,8 @@ def main():
     show(cwd)
     print(f"INIT AT {cwd}")
     while True:
-        print("SELECT AN OPTION: \n 1.TRAVEL THROUGH FILE SYSTEM ")
-        input("Placeholder Response")
-        cwd=navegation("..", cwd)
+        command=input("TYPE A COMMAND: ")
+        cwd=navegation(command, cwd)
         show(cwd)
   
 main()
